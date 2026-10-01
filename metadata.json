@@ -1,0 +1,6 @@
+{
+  "name": "McLaren 720S Top-Down Aero Studio",
+  "description": "High-precision top-down aerodynamic vector visualizer, blueprint inspector, and active aero simulator of the McLaren 720S supercar.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
