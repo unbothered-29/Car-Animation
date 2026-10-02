@@ -31,8 +31,8 @@ export default function App() {
     }
 
     const ctx = gsap.context(() => {
-      // Start: Rear wing and bumper fully visible inside left margin
-      const getCarStartX = () => 20;
+      // Start: Car and road positioned slightly more towards the left
+      const getCarStartX = () => 0;
 
       // End: Car stops very slightly further ahead
       const getCarEndX = () => {
@@ -135,7 +135,7 @@ export default function App() {
           {/* STATISTIC CARDS (OUTSIDE THE HORIZONTAL STRIP)           */}
           {/* ========================================================= */}
 
-          {/* CARD 1: 58% Lime (#e8ff38) - Above the strip */}
+          {/* CARD 1: 58% Yellow (#DEF54F) - Above the strip */}
           <div
             ref={card1Ref}
             className="absolute rounded-[18px] flex flex-col justify-center will-change-transform shadow-[0_8px_24px_rgba(0,0,0,0.06)]"
@@ -201,7 +201,7 @@ export default function App() {
             </div>
           </div>
 
-          {/* CARD 3: 23% Light Blue (#69c5ee) - Below the strip */}
+          {/* CARD 3: 23% Blue (#6AC9FF) - Below the strip */}
           <div
             ref={card3Ref}
             className="absolute rounded-[18px] flex flex-col justify-center will-change-transform border border-[#9de0ff] shadow-[0_8px_24px_rgba(0,0,0,0.06)]"
@@ -234,7 +234,7 @@ export default function App() {
             </div>
           </div>
 
-          {/* CARD 4: 40% Vivid Orange (#ff762d) - Below the strip, overlaps Card 3 */}
+          {/* CARD 4: 40% Orange (#FA7328) - Below the strip, overlaps Card 3 */}
           <div
             ref={card4Ref}
             className="absolute rounded-[18px] flex flex-col justify-center will-change-transform shadow-[0_12px_32px_rgba(0,0,0,0.12)]"
@@ -268,7 +268,7 @@ export default function App() {
           </div>
 
           {/* ========================================================= */}
-          {/* CENTRAL RACING STRIP (270PX HIGH, VERTICALLY CENTERED)     */}
+          {/* CENTRAL RACING STRIP (256PX HIGH, VERTICALLY CENTERED)     */}
           {/* ========================================================= */}
           <div
             className="track w-full relative flex items-center"
@@ -284,7 +284,7 @@ export default function App() {
               className="green-panel absolute left-0 top-0 h-full overflow-hidden flex items-center will-change-[width]"
               style={{
                 backgroundColor: '#45dc7a',
-                width: '162px',
+                width: '98px',
                 zIndex: 2,
               }}
             >
@@ -313,7 +313,7 @@ export default function App() {
               style={{
                 left: 0,
                 top: '50%',
-                transform: 'translate3d(20px, -50%, 0)',
+                transform: 'translate3d(0px, -50%, 0)',
                 height: '256px',
                 width: 'auto',
                 aspectRatio: '1024 / 488',
