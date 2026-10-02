@@ -6,7 +6,7 @@
 import React, { useEffect, useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
-import { CarSvg } from './components/CarSvg';
+import carImage from './assets/car.png';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -307,7 +307,12 @@ export default function App() {
                 zIndex: 4,
               }}
             >
-              <CarSvg className="h-full w-auto object-contain block drop-shadow-none" />
+              <img
+                src={carImage}
+                alt="McLaren 720S"
+                className="h-full w-auto object-contain block drop-shadow-none select-none pointer-events-none"
+                draggable={false}
+              />
             </div>
           </div>
         </div>

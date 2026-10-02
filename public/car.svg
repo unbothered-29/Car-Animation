@@ -1,35 +1,17 @@
-/**
- * @license
- * SPDX-License-Identifier: Apache-2.0
- */
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 640 327" width="1280" height="654">
 
-import React from 'react';
-
-interface CarSvgProps {
-  className?: string;
-  style?: React.CSSProperties;
-}
-
-export const CarSvg: React.FC<CarSvgProps> = ({ className, style }) => {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      viewBox="0 0 640 327"
-      className={className}
-      style={style}
-      aria-label="McLaren 720S Top-Down Vector"
-    >
       <defs>
-        {/* Gradient for soft hood highlight */}
+        
         <radialGradient id="hood-highlight" cx="70%" cy="50%" r="60%">
           <stop offset="0%" stopColor="#f98a28" stopOpacity="0.75" />
           <stop offset="65%" stopColor="#f58220" stopOpacity="0.4" />
           <stop offset="100%" stopColor="#f58220" stopOpacity="0" />
         </radialGradient>
 
-        {/* Symmetrical Top Half of the Car (Mirrored across y = 163.5) */}
+        
         <g id="car-half">
-          {/* 1. ORANGE REAR BUMPER - FLOWS SMOOTHLY INTO WING */}
+          
           <path
             d="
               M 34 163.5
@@ -45,7 +27,7 @@ export const CarSvg: React.FC<CarSvgProps> = ({ className, style }) => {
             strokeWidth="0.8"
           />
 
-          {/* 2. SCULPTED MAIN BODY SHELL */}
+          
           <path
             d="
               M 44 163.5
@@ -62,7 +44,7 @@ export const CarSvg: React.FC<CarSvgProps> = ({ className, style }) => {
             fill="#f58220"
           />
 
-          {/* 3. REAR HAUNCH FACETED PANELS & SHADOWS */}
+          
           <path
             d="
               M 42 150
@@ -104,11 +86,11 @@ export const CarSvg: React.FC<CarSvgProps> = ({ className, style }) => {
           <path d="M 165 32 C 160 52, 154 78, 146 102" fill="none" stroke="#c4601a" strokeWidth="0.5" strokeOpacity="0.3" />
           <path d="M 378 40 C 374 62, 368 88, 362 110" fill="none" stroke="#c4601a" strokeWidth="0.5" strokeOpacity="0.3" />
 
-          {/* Facet crease lines near mirror base */}
+          
           <path d="M 390 41 L 410 47 L 430 40" fill="none" stroke="#c4601a" strokeWidth="0.6" strokeOpacity="0.6" />
           <path d="M 410 47 L 410 65" fill="none" stroke="#c4601a" strokeWidth="0.5" strokeOpacity="0.4" />
 
-          {/* HAUNCH SCOOPS - fill #4a4a4a, upper lip #1a1a1a, inner highlight #5e5e5e */}
+          
           <g id="haunch-scoops-top">
             <path
               d="
@@ -155,9 +137,9 @@ export const CarSvg: React.FC<CarSvgProps> = ({ className, style }) => {
             <path d="M 98 112 L 138 96" fill="none" stroke="#5e5e5e" strokeWidth="0.8" />
           </g>
 
-          {/* LONG SIDE DUCTS (x ≈ 65-305, 5 segments matching reference crop) */}
+          
           <g id="long-side-ducts-top">
-            {/* Segment 1 */}
+            
             <path
               d="
                 M 65 116
@@ -172,7 +154,7 @@ export const CarSvg: React.FC<CarSvgProps> = ({ className, style }) => {
             />
             <line x1="108" y1="85" x2="109" y2="89" stroke="#111111" strokeWidth="1.2" />
 
-            {/* Segment 2 */}
+            
             <path
               d="
                 M 110 84
@@ -187,7 +169,7 @@ export const CarSvg: React.FC<CarSvgProps> = ({ className, style }) => {
             />
             <line x1="155" y1="64" x2="156" y2="68" stroke="#111111" strokeWidth="1.2" />
 
-            {/* Segment 3 */}
+            
             <path
               d="
                 M 157 63
@@ -202,7 +184,7 @@ export const CarSvg: React.FC<CarSvgProps> = ({ className, style }) => {
             />
             <line x1="205" y1="49" x2="206" y2="53" stroke="#111111" strokeWidth="1.2" />
 
-            {/* Segment 4 */}
+            
             <path
               d="
                 M 207 48
@@ -217,7 +199,7 @@ export const CarSvg: React.FC<CarSvgProps> = ({ className, style }) => {
             />
             <line x1="255" y1="41" x2="256" y2="45" stroke="#111111" strokeWidth="1.2" />
 
-            {/* Segment 5 (Frontmost with rounded front near 305,40) */}
+            
             <path
               d="
                 M 257 41
@@ -232,7 +214,7 @@ export const CarSvg: React.FC<CarSvgProps> = ({ className, style }) => {
             />
           </g>
 
-          {/* SIDE MIRROR */}
+          
           <g id="mirror-top">
             <path
               d="
@@ -265,15 +247,15 @@ export const CarSvg: React.FC<CarSvgProps> = ({ className, style }) => {
         </g>
       </defs>
 
-      {/* Note: Background rectangles removed so car SVG is fully transparent */}
+      
 
-      {/* 2. BODY SHELL - SYMMETRICAL REAR & SIDES */}
+      
       <g id="body-rear">
-        <use href="#car-half" xlinkHref="#car-half" />
-        <use href="#car-half" xlinkHref="#car-half" transform="translate(0 327) scale(1 -1)" />
+        <use href="#car-half" xlink:href="#car-half" />
+        <use href="#car-half" xlink:href="#car-half" transform="translate(0 327) scale(1 -1)" />
       </g>
 
-      {/* 3. FRONT NOSE AREA & HOOD */}
+      
       <g id="nose-section">
         <path
           d="
@@ -312,7 +294,7 @@ export const CarSvg: React.FC<CarSvgProps> = ({ className, style }) => {
 
         <line x1="465" y1="163.5" x2="634" y2="163.5" stroke="#c4601a" strokeWidth="0.5" strokeOpacity="0.25" />
 
-        {/* FRONT VENT BLADES */}
+        
         <g id="front-vent-top">
           <path
             d="
@@ -347,7 +329,7 @@ export const CarSvg: React.FC<CarSvgProps> = ({ className, style }) => {
           />
         </g>
 
-        {/* HEADLIGHTS */}
+        
         <g id="headlight-top">
           <path
             d="
@@ -390,7 +372,7 @@ export const CarSvg: React.FC<CarSvgProps> = ({ className, style }) => {
           />
         </g>
 
-        {/* Nose Outer Stroke */}
+        
         <path
           d="
             M 460 36
@@ -407,7 +389,7 @@ export const CarSvg: React.FC<CarSvgProps> = ({ className, style }) => {
         />
       </g>
 
-      {/* 4. ENGINE LOUVRES & FRAME (x ≈ 40-130, y ≈ 100-180) */}
+      
       <g id="engine-bay">
         <path
           d="
@@ -475,7 +457,7 @@ export const CarSvg: React.FC<CarSvgProps> = ({ className, style }) => {
           strokeWidth="0.9"
         />
 
-        {/* 4 Black Curved Slats */}
+        
         <path
           d="
             M 48 155
@@ -529,7 +511,7 @@ export const CarSvg: React.FC<CarSvgProps> = ({ className, style }) => {
           strokeWidth="0.8"
         />
 
-        {/* Large Dark Rounded Window */}
+        
         <path
           d="
             M 99 131
@@ -556,7 +538,7 @@ export const CarSvg: React.FC<CarSvgProps> = ({ className, style }) => {
           strokeWidth="0.8"
         />
 
-        {/* Rear U-Notch Inset Lip */}
+        
         <path
           d="
             M 34 154
@@ -571,7 +553,7 @@ export const CarSvg: React.FC<CarSvgProps> = ({ className, style }) => {
         />
       </g>
 
-      {/* 5. REAR WING (x ≈ 2-82, y ≈ 27-266) */}
+      
       <g id="rear-wing">
         <path
           d="
@@ -613,9 +595,9 @@ export const CarSvg: React.FC<CarSvgProps> = ({ className, style }) => {
         />
       </g>
 
-      {/* 6. CABIN & GLASSHOUSE (PIXEL-PERFECT ACCURACY TO REFERENCE) */}
+      
       <g id="cabin">
-        {/* Outer Mid-Grey (#555) Canopy Base with Teal Outline Kept (#1fa2ad) */}
+        
         <path
           d="
             M 480 163.5
@@ -633,9 +615,9 @@ export const CarSvg: React.FC<CarSvgProps> = ({ className, style }) => {
           strokeWidth="1.1"
         />
 
-        {/* 1. REAR DECK COVER & BUTTRESSES (x ≈ 135-260) */}
+        
         <g id="rear-deck-group">
-          {/* Flying Buttress Pillars / Surrounds */}
+          
           <path
             d="
               M 137 132
@@ -657,7 +639,7 @@ export const CarSvg: React.FC<CarSvgProps> = ({ className, style }) => {
             fill="#3a3d42"
           />
 
-          {/* Recessed Triangular Black Glass Intake Windows on Buttresses */}
+          
           <path
             d="
               M 152 124
@@ -679,7 +661,7 @@ export const CarSvg: React.FC<CarSvgProps> = ({ className, style }) => {
             fill="#111214"
           />
 
-          {/* Main Dark Rear Deck Cover (#1c1c1c) */}
+          
           <path
             d="
               M 137 132
@@ -695,13 +677,13 @@ export const CarSvg: React.FC<CarSvgProps> = ({ className, style }) => {
             strokeLinejoin="round"
           />
 
-          {/* Thin vertical light-grey line at x ≈ 243 */}
+          
           <line x1="243" y1="105" x2="243" y2="222" stroke="#c0c4cc" strokeWidth="0.8" />
         </g>
 
-        {/* 2. ROOF PANEL (x ≈ 260-376) */}
+        
         <g id="roof-panel">
-          {/* Base Roof Shading (#4d4f54) */}
+          
           <path
             d="
               M 260 102
@@ -715,7 +697,7 @@ export const CarSvg: React.FC<CarSvgProps> = ({ className, style }) => {
             strokeWidth="0.8"
           />
 
-          {/* Dark Bevel Borders along top and bottom roof rails */}
+          
           <path
             d="
               M 260 102
@@ -737,7 +719,7 @@ export const CarSvg: React.FC<CarSvgProps> = ({ className, style }) => {
             fill="#34363a"
           />
 
-          {/* TWO DARK RIGHT-TRIANGLE WEDGES (#262626) with points toward the rear (left) */}
+          
           <path
             d="
               M 315 149
@@ -757,10 +739,10 @@ export const CarSvg: React.FC<CarSvgProps> = ({ className, style }) => {
             fill="#262626"
           />
 
-          {/* Central Spine Surface (#4d4f54) */}
+          
           <rect x="260" y="149" width="114" height="29" fill="#4d4f54" />
 
-          {/* TWO CRISP LIGHT LINES FORMING THE T-BAR / HAMMERHEAD WITH SMOOTH 90° CORNER FILLET */}
+          
           <path
             d="
               M 270 149
@@ -786,13 +768,13 @@ export const CarSvg: React.FC<CarSvgProps> = ({ className, style }) => {
             strokeLinecap="round"
           />
 
-          {/* Faint Windshield Header Seam Line */}
+          
           <line x1="376" y1="104" x2="376" y2="223" stroke="#888888" strokeWidth="0.8" strokeDasharray="3 2" opacity="0.6" />
         </g>
 
-        {/* 3. WINDSHIELD (x ≈ 376-480) - CLEAN CONTINUOUS GLASS + REFLECTIONS + WIPER */}
+        
         <g id="windshield">
-          {/* Continuous Dark Windshield Glass Base */}
+          
           <path
             d="
               M 376 104
@@ -807,7 +789,7 @@ export const CarSvg: React.FC<CarSvgProps> = ({ className, style }) => {
             fill="#222326"
           />
 
-          {/* Thick black (#0a0a0a) A-pillar frame */}
+          
           <path
             d="
               M 376 104
@@ -829,8 +811,8 @@ export const CarSvg: React.FC<CarSvgProps> = ({ className, style }) => {
             fill="#0a0a0a"
           />
 
-          {/* 3 WIDE SMOOTH HORIZONTAL CURVED REFLECTION BANDS BOWED TOWARD NOSE */}
-          {/* Band 1 - Upper (#383b40) */}
+          
+          
           <path
             d="
               M 382 110
@@ -842,7 +824,7 @@ export const CarSvg: React.FC<CarSvgProps> = ({ className, style }) => {
             fill="#3a3d42"
             opacity="0.85"
           />
-          {/* Band 2 - Middle (#50545a) */}
+          
           <path
             d="
               M 382 135
@@ -854,7 +836,7 @@ export const CarSvg: React.FC<CarSvgProps> = ({ className, style }) => {
             fill="#52565d"
             opacity="0.9"
           />
-          {/* Band 3 - Lower Brightest (#6a6f78) */}
+          
           <path
             d="
               M 382 165
@@ -867,12 +849,12 @@ export const CarSvg: React.FC<CarSvgProps> = ({ className, style }) => {
             opacity="0.95"
           />
 
-          {/* Small black rear-view mirror block (pill shape) */}
+          
           <rect x="382" y="148" width="18" height="31" rx="6" fill="#0c0d0f" />
 
-          {/* ARTICULATED WINDSHIELD WIPER */}
+          
           <g id="windshield-wiper">
-            {/* Dual Wiper Blades along front cowl curve */}
+            
             <path
               d="
                 M 454 122
@@ -888,7 +870,7 @@ export const CarSvg: React.FC<CarSvgProps> = ({ className, style }) => {
               strokeWidth="0.9"
               strokeLinejoin="round"
             />
-            {/* Lower wiper arm segment & elbow */}
+            
             <path
               d="
                 M 469 157
@@ -902,17 +884,16 @@ export const CarSvg: React.FC<CarSvgProps> = ({ className, style }) => {
               strokeWidth="1"
               strokeLinejoin="round"
             />
-            {/* Wiper Pivot Base */}
+            
             <circle cx="472" cy="183" r="1.8" fill="#e8ecf2" />
           </g>
         </g>
       </g>
 
-      {/* 7. SIDE MIRRORS (SHARK-FIN HOUSING MATCHING REFERENCE CROP) */}
+      
       <g id="mirrors">
-        <use href="#mirror-top" xlinkHref="#mirror-top" />
-        <use href="#mirror-top" xlinkHref="#mirror-top" transform="translate(0 327) scale(1 -1)" />
+        <use href="#mirror-top" xlink:href="#mirror-top" />
+        <use href="#mirror-top" xlink:href="#mirror-top" transform="translate(0 327) scale(1 -1)" />
       </g>
-    </svg>
-  );
-};
+    
+</svg>
