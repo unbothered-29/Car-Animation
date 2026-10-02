@@ -31,8 +31,8 @@ export default function App() {
       const getCarEndX = () => Math.round(window.innerWidth * 0.76);
 
       // Exact point where green road ends & black road begins in respect to the car:
-      // Aligns with the rear haunch step / corner (SVG x ≈ 260 => 260 * (270 / 327) ≈ 215px)
-      const CAR_ROAD_OFFSET = 215;
+      // Aligns right in front of the engine louvres & deck scoops matching the photo (SVG x ≈ 172 => ~142px)
+      const CAR_ROAD_OFFSET = 142;
 
       // Green road trail locked 1:1 to car position
       const getGreenStartWidth = () => getCarStartX() + CAR_ROAD_OFFSET;
@@ -133,8 +133,8 @@ export default function App() {
               left: '45vw',
               width: '22.8vw',
               minWidth: '220px',
-              height: 'clamp(145px, 20.5vh, 210px)',
-              padding: 'clamp(20px, 2.4vw, 44px) clamp(24px, 2.6vw, 48px)',
+              height: 'clamp(165px, 23.5vh, 240px)',
+              padding: 'clamp(24px, 2.8vw, 48px) clamp(24px, 2.6vw, 48px)',
               zIndex: 10,
             }}
           >
@@ -166,8 +166,8 @@ export default function App() {
               left: '67vw',
               width: '21vw',
               minWidth: '200px',
-              height: 'clamp(145px, 20.5vh, 210px)',
-              padding: 'clamp(20px, 2.4vw, 44px) clamp(24px, 2.6vw, 48px)',
+              height: 'clamp(165px, 23.5vh, 240px)',
+              padding: 'clamp(24px, 2.8vw, 48px) clamp(24px, 2.6vw, 48px)',
               zIndex: 20,
             }}
           >
@@ -199,8 +199,8 @@ export default function App() {
               left: '38.5vw',
               width: '24.5vw',
               minWidth: '230px',
-              height: 'clamp(145px, 20.5vh, 210px)',
-              padding: 'clamp(20px, 2.4vw, 44px) clamp(24px, 2.6vw, 48px)',
+              height: 'clamp(165px, 23.5vh, 240px)',
+              padding: 'clamp(24px, 2.8vw, 48px) clamp(24px, 2.6vw, 48px)',
               zIndex: 10,
             }}
           >
@@ -232,8 +232,8 @@ export default function App() {
               left: '61vw',
               width: '24.5vw',
               minWidth: '230px',
-              height: 'clamp(145px, 20.5vh, 210px)',
-              padding: 'clamp(20px, 2.4vw, 44px) clamp(24px, 2.6vw, 48px)',
+              height: 'clamp(165px, 23.5vh, 240px)',
+              padding: 'clamp(24px, 2.8vw, 48px) clamp(24px, 2.6vw, 48px)',
               zIndex: 20,
             }}
           >
@@ -272,7 +272,7 @@ export default function App() {
               className="green-panel absolute left-0 top-0 h-full overflow-hidden flex items-center will-change-[width]"
               style={{
                 backgroundColor: '#45dc7a',
-                width: '235px',
+                width: '162px',
                 zIndex: 2,
               }}
             >
