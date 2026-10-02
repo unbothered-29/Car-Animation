@@ -15,6 +15,7 @@ export default function App() {
   const stageRef = useRef<HTMLDivElement>(null);
   const carRef = useRef<HTMLDivElement>(null);
   const greenPanelRef = useRef<HTMLDivElement>(null);
+  const headlineRef = useRef<HTMLDivElement>(null);
 
   const card1Ref = useRef<HTMLDivElement>(null);
   const card2Ref = useRef<HTMLDivElement>(null);
@@ -22,17 +23,28 @@ export default function App() {
   const card4Ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // Refresh ScrollTrigger once fonts are loaded to get exact text measurements
+    if (typeof document !== 'undefined' && document.fonts) {
+      document.fonts.ready.then(() => {
+        ScrollTrigger.refresh();
+      });
+    }
+
     const ctx = gsap.context(() => {
       // Start: Rear wing and bumper fully visible inside left margin
       const getCarStartX = () => 20;
 
-      // End: Car stops with its rear wing right next to the "I" of "WELCOME ITZFI"
-      // Rear half remains prominently on-screen at ~76% viewport width
-      const getCarEndX = () => Math.round(window.innerWidth * 0.76);
+      // End: Car stops very slightly further ahead
+      const getCarEndX = () => {
+        if (headlineRef.current && headlineRef.current.offsetWidth > 0) {
+          const textEnd = headlineRef.current.offsetLeft + headlineRef.current.offsetWidth;
+          return textEnd - 8;
+        }
+        return Math.round(window.innerWidth * 0.80);
+      };
 
       // Exact point where green road ends & black road begins in respect to the car:
-      // Aligns right in front of the engine louvres & deck scoops matching the photo (SVG x ≈ 172 => ~142px)
-      const CAR_ROAD_OFFSET = 142;
+      const CAR_ROAD_OFFSET = 98;
 
       // Green road trail locked 1:1 to car position
       const getGreenStartWidth = () => getCarStartX() + CAR_ROAD_OFFSET;
@@ -128,13 +140,13 @@ export default function App() {
             ref={card1Ref}
             className="absolute rounded-[18px] flex flex-col justify-center will-change-transform shadow-[0_8px_24px_rgba(0,0,0,0.06)]"
             style={{
-              backgroundColor: '#e8ff38',
-              bottom: 'calc(50% + 135px + 24px)',
-              left: '45vw',
-              width: '22.8vw',
-              minWidth: '220px',
+              backgroundColor: '#DEF54F',
+              bottom: 'calc(50% + 128px + 24px)',
+              left: '46vw',
+              width: '23vw',
+              minWidth: '210px',
               height: 'clamp(165px, 23.5vh, 240px)',
-              padding: 'clamp(24px, 2.8vw, 48px) clamp(24px, 2.6vw, 48px)',
+              padding: 'clamp(24px, 2.8vw, 48px) clamp(10px, 1.0vw, 20px) clamp(24px, 2.8vw, 48px) clamp(26px, 2.4vw, 44px)',
               zIndex: 10,
             }}
           >
@@ -145,9 +157,9 @@ export default function App() {
               58%
             </div>
             <div
-              className="text-[#111111] font-normal leading-snug"
+              className="text-[#111111] font-normal leading-snug whitespace-nowrap"
               style={{
-                fontSize: 'clamp(14px, 1.3vw, 24px)',
+                fontSize: 'clamp(15px, 1.38vw, 22.5px)',
                 marginTop: 'clamp(8px, 0.7vw, 13px)',
                 fontFamily: 'Arial, sans-serif',
               }}
@@ -162,12 +174,12 @@ export default function App() {
             className="absolute rounded-[18px] flex flex-col justify-center will-change-transform shadow-[0_12px_32px_rgba(0,0,0,0.18)]"
             style={{
               backgroundColor: '#333333',
-              bottom: 'calc(50% + 135px + 24px)',
-              left: '67vw',
-              width: '21vw',
-              minWidth: '200px',
+              bottom: 'calc(50% + 128px + 24px)',
+              left: '68vw',
+              width: '20.5vw',
+              minWidth: '190px',
               height: 'clamp(165px, 23.5vh, 240px)',
-              padding: 'clamp(24px, 2.8vw, 48px) clamp(24px, 2.6vw, 48px)',
+              padding: 'clamp(24px, 2.8vw, 48px) clamp(10px, 1.0vw, 20px) clamp(24px, 2.8vw, 48px) clamp(16px, 1.6vw, 28px)',
               zIndex: 20,
             }}
           >
@@ -178,9 +190,9 @@ export default function App() {
               27%
             </div>
             <div
-              className="text-white font-normal leading-snug"
+              className="text-white font-normal leading-snug whitespace-nowrap"
               style={{
-                fontSize: 'clamp(14px, 1.3vw, 24px)',
+                fontSize: 'clamp(15px, 1.38vw, 22.5px)',
                 marginTop: 'clamp(8px, 0.7vw, 13px)',
                 fontFamily: 'Arial, sans-serif',
               }}
@@ -192,15 +204,15 @@ export default function App() {
           {/* CARD 3: 23% Light Blue (#69c5ee) - Below the strip */}
           <div
             ref={card3Ref}
-            className="absolute rounded-[18px] flex flex-col justify-center will-change-transform border border-[#8ad7ff] shadow-[0_8px_24px_rgba(0,0,0,0.06)]"
+            className="absolute rounded-[18px] flex flex-col justify-center will-change-transform border border-[#9de0ff] shadow-[0_8px_24px_rgba(0,0,0,0.06)]"
             style={{
-              backgroundColor: '#69c5ee',
-              top: 'calc(50% + 135px + 24px)',
-              left: '38.5vw',
-              width: '24.5vw',
-              minWidth: '230px',
+              backgroundColor: '#6AC9FF',
+              top: 'calc(50% + 128px + 24px)',
+              left: '39.5vw',
+              width: '23vw',
+              minWidth: '210px',
               height: 'clamp(165px, 23.5vh, 240px)',
-              padding: 'clamp(24px, 2.8vw, 48px) clamp(24px, 2.6vw, 48px)',
+              padding: 'clamp(24px, 2.8vw, 48px) clamp(10px, 1.0vw, 20px) clamp(24px, 2.8vw, 48px) clamp(26px, 2.4vw, 44px)',
               zIndex: 10,
             }}
           >
@@ -211,9 +223,9 @@ export default function App() {
               23%
             </div>
             <div
-              className="text-[#111111] font-normal leading-snug"
+              className="text-[#111111] font-normal leading-snug whitespace-nowrap"
               style={{
-                fontSize: 'clamp(14px, 1.3vw, 24px)',
+                fontSize: 'clamp(14px, 1.25vw, 20px)',
                 marginTop: 'clamp(8px, 0.7vw, 13px)',
                 fontFamily: 'Arial, sans-serif',
               }}
@@ -227,13 +239,13 @@ export default function App() {
             ref={card4Ref}
             className="absolute rounded-[18px] flex flex-col justify-center will-change-transform shadow-[0_12px_32px_rgba(0,0,0,0.12)]"
             style={{
-              backgroundColor: '#ff762d',
-              top: 'calc(50% + 135px + 24px)',
-              left: '61vw',
-              width: '24.5vw',
-              minWidth: '230px',
+              backgroundColor: '#FA7328',
+              top: 'calc(50% + 128px + 24px)',
+              left: '61.5vw',
+              width: '23vw',
+              minWidth: '210px',
               height: 'clamp(165px, 23.5vh, 240px)',
-              padding: 'clamp(24px, 2.8vw, 48px) clamp(24px, 2.6vw, 48px)',
+              padding: 'clamp(24px, 2.8vw, 48px) clamp(10px, 1.0vw, 20px) clamp(24px, 2.8vw, 48px) clamp(26px, 2.4vw, 44px)',
               zIndex: 20,
             }}
           >
@@ -244,9 +256,9 @@ export default function App() {
               40%
             </div>
             <div
-              className="text-[#111111] font-normal leading-snug"
+              className="text-[#111111] font-normal leading-snug whitespace-nowrap"
               style={{
-                fontSize: 'clamp(14px, 1.3vw, 24px)',
+                fontSize: 'clamp(14px, 1.25vw, 20px)',
                 marginTop: 'clamp(8px, 0.7vw, 13px)',
                 fontFamily: 'Arial, sans-serif',
               }}
@@ -261,7 +273,7 @@ export default function App() {
           <div
             className="track w-full relative flex items-center"
             style={{
-              height: '270px',
+              height: '256px',
               backgroundColor: '#1c1c1c',
               zIndex: 5,
             }}
@@ -278,15 +290,16 @@ export default function App() {
             >
               {/* GIANT HEADLINE (INSIDE GREEN SECTION, PROGRESSIVELY REVEALED) */}
               <div
+                ref={headlineRef}
                 className="headline uppercase whitespace-nowrap leading-none select-none pointer-events-none"
                 style={{
                   position: 'absolute',
-                  left: 'clamp(30px, 3.5vw, 64px)',
-                  fontSize: 'clamp(84px, 9.6vw, 180px)',
-                  fontWeight: 900,
-                  letterSpacing: '-0.025em',
+                  left: 'clamp(64px, 5.5vw, 110px)',
+                  fontSize: 'clamp(86px, 9.8vw, 195px)',
+                  fontWeight: 700,
+                  letterSpacing: '0.03em',
                   color: '#000000',
-                  fontFamily: '"Arial Black", Impact, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif',
+                  fontFamily: 'Arial, "Helvetica Neue", Helvetica, sans-serif',
                 }}
               >
                 WELCOME ITZFI
@@ -301,9 +314,9 @@ export default function App() {
                 left: 0,
                 top: '50%',
                 transform: 'translate3d(20px, -50%, 0)',
-                height: '270px',
+                height: '256px',
                 width: 'auto',
-                aspectRatio: '640 / 327',
+                aspectRatio: '1024 / 488',
                 zIndex: 4,
               }}
             >
