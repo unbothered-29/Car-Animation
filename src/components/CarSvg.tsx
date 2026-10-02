@@ -1,0 +1,918 @@
+/**
+ * @license
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+import React from 'react';
+
+interface CarSvgProps {
+  className?: string;
+  style?: React.CSSProperties;
+}
+
+export const CarSvg: React.FC<CarSvgProps> = ({ className, style }) => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 640 327"
+      className={className}
+      style={style}
+      aria-label="McLaren 720S Top-Down Vector"
+    >
+      <defs>
+        {/* Gradient for soft hood highlight */}
+        <radialGradient id="hood-highlight" cx="70%" cy="50%" r="60%">
+          <stop offset="0%" stopColor="#f98a28" stopOpacity="0.75" />
+          <stop offset="65%" stopColor="#f58220" stopOpacity="0.4" />
+          <stop offset="100%" stopColor="#f58220" stopOpacity="0" />
+        </radialGradient>
+
+        {/* Symmetrical Top Half of the Car (Mirrored across y = 163.5) */}
+        <g id="car-half">
+          {/* 1. ORANGE REAR BUMPER - FLOWS SMOOTHLY INTO WING */}
+          <path
+            d="
+              M 34 163.5
+              C 34 130, 48 90, 72 58
+              C 82 46, 98 36, 120 32
+              C 142 30, 168 31, 190 33
+              C 160 38, 125 45, 95 62
+              C 68 82, 52 115, 46 163.5
+              Z
+            "
+            fill="#f58220"
+            stroke="#c4601a"
+            strokeWidth="0.8"
+          />
+
+          {/* 2. SCULPTED MAIN BODY SHELL */}
+          <path
+            d="
+              M 44 163.5
+              C 44 140, 52 110, 68 82
+              C 85 54, 112 34, 148 31
+              C 182 29, 218 33, 248 37
+              C 285 41, 325 42, 365 41
+              C 405 39, 435 36, 465 35
+              C 498 34, 530 40, 558 54
+              C 586 70, 612 102, 630 134
+              C 634 146, 635 156, 635 163.5
+              Z
+            "
+            fill="#f58220"
+          />
+
+          {/* 3. REAR HAUNCH FACETED PANELS & SHADOWS */}
+          <path
+            d="
+              M 42 150
+              L 70 120
+              L 96 125
+              L 78 138
+              L 44 153
+              Z
+            "
+            fill="#f58220"
+            stroke="#c4601a"
+            strokeWidth="0.7"
+          />
+          <path
+            d="
+              M 70 120
+              L 115 88
+              L 140 82
+              L 118 108
+              L 96 125
+              Z
+            "
+            fill="#e8741a"
+            opacity="0.9"
+          />
+          <path
+            d="
+              M 60 118
+              C 74 85, 96 52, 130 36
+              C 155 31, 185 31, 215 34
+              L 210 43
+              C 182 39, 155 39, 132 48
+              C 104 62, 78 92, 66 122
+              Z
+            "
+            fill="#e8741a"
+          />
+          <path d="M 42 150 L 70 120 L 115 88 L 168 80" fill="none" stroke="#c4601a" strokeWidth="0.8" />
+          <path d="M 165 32 C 160 52, 154 78, 146 102" fill="none" stroke="#c4601a" strokeWidth="0.5" strokeOpacity="0.3" />
+          <path d="M 378 40 C 374 62, 368 88, 362 110" fill="none" stroke="#c4601a" strokeWidth="0.5" strokeOpacity="0.3" />
+
+          {/* Facet crease lines near mirror base */}
+          <path d="M 390 41 L 410 47 L 430 40" fill="none" stroke="#c4601a" strokeWidth="0.6" strokeOpacity="0.6" />
+          <path d="M 410 47 L 410 65" fill="none" stroke="#c4601a" strokeWidth="0.5" strokeOpacity="0.4" />
+
+          {/* HAUNCH SCOOPS - fill #4a4a4a, upper lip #1a1a1a, inner highlight #5e5e5e */}
+          <g id="haunch-scoops-top">
+            <path
+              d="
+                M 58 108
+                C 72 78, 98 56, 134 46
+                C 142 44, 146 47, 140 50
+                C 118 60, 92 82, 72 106
+                C 64 116, 58 118, 58 108
+                Z
+              "
+              fill="#4a4a4a"
+            />
+            <path
+              d="
+                M 58 108
+                C 72 78, 98 56, 134 46
+                L 130 49
+                C 96 59, 72 80, 60 110
+                Z
+              "
+              fill="#1a1a1a"
+            />
+            <path
+              d="M 134 47 C 112 56, 88 77, 68 104"
+              fill="none"
+              stroke="#5e5e5e"
+              strokeWidth="1"
+              strokeLinecap="round"
+            />
+
+            <path
+              d="
+                M 74 135
+                L 98 112
+                L 138 96
+                L 145 99
+                L 102 117
+                L 80 141
+                Z
+              "
+              fill="#4a4a4a"
+            />
+            <path d="M 74 135 L 98 112 L 138 96" fill="none" stroke="#1a1a1a" strokeWidth="1" />
+            <path d="M 98 112 L 138 96" fill="none" stroke="#5e5e5e" strokeWidth="0.8" />
+          </g>
+
+          {/* LONG SIDE DUCTS (x ≈ 65-305, 5 segments matching reference crop) */}
+          <g id="long-side-ducts-top">
+            {/* Segment 1 */}
+            <path
+              d="
+                M 65 116
+                C 78 104, 92 94, 108 85
+                L 109 89
+                C 94 98, 80 108, 68 120
+                Z
+              "
+              fill="#2b2d30"
+              stroke="#44464a"
+              strokeWidth="0.6"
+            />
+            <line x1="108" y1="85" x2="109" y2="89" stroke="#111111" strokeWidth="1.2" />
+
+            {/* Segment 2 */}
+            <path
+              d="
+                M 110 84
+                C 124 76, 139 70, 155 64
+                L 156 68
+                C 141 74, 126 80, 112 88
+                Z
+              "
+              fill="#2b2d30"
+              stroke="#44464a"
+              strokeWidth="0.6"
+            />
+            <line x1="155" y1="64" x2="156" y2="68" stroke="#111111" strokeWidth="1.2" />
+
+            {/* Segment 3 */}
+            <path
+              d="
+                M 157 63
+                C 173 57, 189 53, 205 49
+                L 206 53
+                C 190 57, 174 61, 158 67
+                Z
+              "
+              fill="#2b2d30"
+              stroke="#44464a"
+              strokeWidth="0.6"
+            />
+            <line x1="205" y1="49" x2="206" y2="53" stroke="#111111" strokeWidth="1.2" />
+
+            {/* Segment 4 */}
+            <path
+              d="
+                M 207 48
+                C 223 45, 239 43, 255 41
+                L 256 45
+                C 240 47, 224 49, 208 52
+                Z
+              "
+              fill="#2b2d30"
+              stroke="#44464a"
+              strokeWidth="0.6"
+            />
+            <line x1="255" y1="41" x2="256" y2="45" stroke="#111111" strokeWidth="1.2" />
+
+            {/* Segment 5 (Frontmost with rounded front near 305,40) */}
+            <path
+              d="
+                M 257 41
+                C 273 39, 289 38, 302 39
+                C 305 39.5, 306 41.5, 304 43
+                C 289 44, 273 45, 258 45
+                Z
+              "
+              fill="#2b2d30"
+              stroke="#44464a"
+              strokeWidth="0.6"
+            />
+          </g>
+
+          {/* SIDE MIRROR */}
+          <g id="mirror-top">
+            <path
+              d="
+                M 392 41
+                L 381 17
+                C 381 15, 384 14, 388 15
+                C 400 16, 412 21, 419 28
+                C 421 30, 421 33, 420 34
+                L 426 40
+                Z
+              "
+              fill="#222326"
+            />
+            <path
+              d="
+                M 392 41
+                L 381 17
+                C 381 15, 384 14, 388 15
+                C 400 16, 412 21, 419 28
+                C 421 30, 421 33, 420 34
+                L 426 40
+              "
+              fill="none"
+              stroke="#c95f14"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            />
+          </g>
+        </g>
+      </defs>
+
+      {/* Note: Background rectangles removed so car SVG is fully transparent */}
+
+      {/* 2. BODY SHELL - SYMMETRICAL REAR & SIDES */}
+      <g id="body-rear">
+        <use href="#car-half" xlinkHref="#car-half" />
+        <use href="#car-half" xlinkHref="#car-half" transform="translate(0 327) scale(1 -1)" />
+      </g>
+
+      {/* 3. FRONT NOSE AREA & HOOD */}
+      <g id="nose-section">
+        <path
+          d="
+            M 460 36
+            C 515 40, 560 56, 595 86
+            C 620 108, 634 134, 636 150
+            C 636.5 156, 636.5 171, 636 177
+            C 634 193, 620 219, 595 241
+            C 560 271, 515 287, 460 291
+            Z
+          "
+          fill="#f58220"
+        />
+
+        <ellipse
+          cx="555"
+          cy="163.5"
+          rx="85"
+          ry="75"
+          fill="url(#hood-highlight)"
+        />
+
+        <path
+          d="
+            M 465 92
+            C 515 90, 555 98, 584 122
+            C 602 138, 612 152, 614 163.5
+            C 612 175, 602 189, 584 205
+            C 555 229, 515 237, 465 235
+          "
+          fill="none"
+          stroke="#ff9a3c"
+          strokeWidth="0.8"
+          strokeOpacity="0.45"
+        />
+
+        <line x1="465" y1="163.5" x2="634" y2="163.5" stroke="#c4601a" strokeWidth="0.5" strokeOpacity="0.25" />
+
+        {/* FRONT VENT BLADES */}
+        <g id="front-vent-top">
+          <path
+            d="
+              M 565 54
+              C 572 50, 578 52, 584 57
+              C 604 74, 618 92, 625 105
+              C 623 103, 614 91, 598 77
+              C 586 67, 574 59, 565 54
+              Z
+            "
+            fill="#2b2b2b"
+            stroke="#4a4a4a"
+            strokeWidth="0.8"
+            strokeLinejoin="round"
+          />
+        </g>
+
+        <g id="front-vent-bottom">
+          <path
+            d="
+              M 565 273
+              C 572 277, 578 275, 584 270
+              C 604 253, 618 235, 625 222
+              C 623 224, 614 236, 598 250
+              C 586 260, 574 268, 565 273
+              Z
+            "
+            fill="#2b2b2b"
+            stroke="#4a4a4a"
+            strokeWidth="0.8"
+            strokeLinejoin="round"
+          />
+        </g>
+
+        {/* HEADLIGHTS */}
+        <g id="headlight-top">
+          <path
+            d="
+              M 491 71
+              C 502 75, 524 88, 545 102
+              C 558 111, 568 117, 568 118
+              C 568 119, 562 119, 552 114
+              C 532 103, 508 86, 491 71
+              Z
+            "
+            fill="#050505"
+          />
+          <path
+            d="M 498 76 C 516 89, 536 102, 558 113"
+            fill="none"
+            stroke="#bbbbbb"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+          />
+        </g>
+
+        <g id="headlight-bottom">
+          <path
+            d="
+              M 491 256
+              C 502 252, 524 239, 545 225
+              C 558 216, 568 210, 568 209
+              C 568 208, 562 208, 552 213
+              C 532 224, 508 241, 491 256
+              Z
+            "
+            fill="#050505"
+          />
+          <path
+            d="M 498 251 C 516 238, 536 225, 558 214"
+            fill="none"
+            stroke="#bbbbbb"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+          />
+        </g>
+
+        {/* Nose Outer Stroke */}
+        <path
+          d="
+            M 460 36
+            C 515 40, 560 56, 595 86
+            C 620 108, 634 134, 636 150
+            C 636.5 156, 636.5 171, 636 177
+            C 634 193, 620 219, 595 241
+            C 560 271, 515 287, 460 291
+          "
+          fill="none"
+          stroke="#c4601a"
+          strokeWidth="2"
+          strokeLinecap="round"
+        />
+      </g>
+
+      {/* 4. ENGINE LOUVRES & FRAME (x ≈ 40-130, y ≈ 100-180) */}
+      <g id="engine-bay">
+        <path
+          d="
+            M 35 150
+            L 41 146
+            L 44 149
+            L 44 178
+            L 41 181
+            L 35 177
+            Z
+          "
+          fill="#f58220"
+          stroke="#c4601a"
+          strokeWidth="0.8"
+        />
+        <path
+          d="
+            M 35 152
+            L 41 148
+            L 97 124
+            L 136 132
+            L 142 163.5
+            L 136 195
+            L 97 203
+            L 41 179
+            L 35 175
+            Z
+          "
+          fill="none"
+          stroke="#1fa2ad"
+          strokeWidth="1.2"
+        />
+        <path
+          d="
+            M 34 153
+            L 40 149
+            L 97 125
+            L 136 133
+            L 141 163.5
+            L 136 194
+            L 97 202
+            L 40 178
+            L 34 174
+            Z
+          "
+          fill="#45484f"
+          stroke="#202226"
+          strokeWidth="0.8"
+        />
+        <path
+          d="
+            M 37 154
+            L 42 151
+            L 96 128
+            L 134 135
+            L 139 163.5
+            L 134 192
+            L 96 199
+            L 42 176
+            L 37 173
+            Z
+          "
+          fill="none"
+          stroke="#828892"
+          strokeWidth="0.9"
+        />
+
+        {/* 4 Black Curved Slats */}
+        <path
+          d="
+            M 48 155
+            C 51 155, 53 158, 53 163.5
+            C 53 169, 51 172, 48 172
+            C 46 172, 45 169, 45 163.5
+            C 45 158, 46 155, 48 155
+            Z
+          "
+          fill="#050505"
+          stroke="#3a3a3a"
+          strokeWidth="0.8"
+        />
+        <path
+          d="
+            M 58 149
+            C 62 150, 65 156, 65 163.5
+            C 65 171, 62 177, 58 178
+            C 55 178, 54 171, 54 163.5
+            C 54 156, 55 149, 58 149
+            Z
+          "
+          fill="#050505"
+          stroke="#3a3a3a"
+          strokeWidth="0.8"
+        />
+        <path
+          d="
+            M 70 143
+            C 76 144, 80 152, 80 163.5
+            C 80 175, 76 183, 70 184
+            C 66 184, 65 175, 65 163.5
+            C 65 152, 66 143, 70 143
+            Z
+          "
+          fill="#050505"
+          stroke="#3a3a3a"
+          strokeWidth="0.8"
+        />
+        <path
+          d="
+            M 84 135
+            C 92 137, 97 148, 97 163.5
+            C 97 179, 92 190, 84 192
+            C 79 192, 78 179, 78 163.5
+            C 78 148, 79 135, 84 135
+            Z
+          "
+          fill="#050505"
+          stroke="#3a3a3a"
+          strokeWidth="0.8"
+        />
+
+        {/* Large Dark Rounded Window */}
+        <path
+          d="
+            M 99 131
+            L 112 134
+            C 126 138, 133 148, 134 163.5
+            C 133 179, 126 189, 112 193
+            L 99 196
+            C 103 186, 105 175, 105 163.5
+            C 105 152, 103 141, 99 131
+            Z
+          "
+          fill="#121315"
+        />
+        <path
+          d="
+            M 101 134
+            L 112 137
+            C 123 141, 130 150, 131 163.5
+            C 130 177, 123 186, 112 190
+            L 101 193
+          "
+          fill="none"
+          stroke="#2e3137"
+          strokeWidth="0.8"
+        />
+
+        {/* Rear U-Notch Inset Lip */}
+        <path
+          d="
+            M 34 154
+            L 38 152
+            L 44 154
+            L 44 173
+            L 38 175
+            L 34 173
+            Z
+          "
+          fill="#222427"
+        />
+      </g>
+
+      {/* 5. REAR WING (x ≈ 2-82, y ≈ 27-266) */}
+      <g id="rear-wing">
+        <path
+          d="
+            M 82 27
+            C 42 60, 4 105, 4 163.5
+            C 4 218, 38 258, 76 266
+            C 82 268, 84 262, 82 254
+            C 62 230, 29 198, 29 163.5
+            C 29 129, 62 70, 82 30
+            C 83 28, 83 27, 82 27
+            Z
+          "
+          fill="#121315"
+          stroke="#050505"
+          strokeWidth="0.8"
+        />
+        <path
+          d="
+            M 78 36
+            C 58 76, 26 130, 26 163.5
+            C 26 197, 58 228, 76 256
+            C 68 238, 40 202, 40 163.5
+            C 40 125, 68 70, 78 36
+            Z
+          "
+          fill="#2b2b2b"
+          opacity="0.85"
+        />
+        <path
+          d="
+            M 81 29
+            C 41 62, 5 106, 5 163.5
+            C 5 217, 39 257, 76 265
+          "
+          fill="none"
+          stroke="#555555"
+          strokeWidth="1.2"
+          strokeLinecap="round"
+        />
+      </g>
+
+      {/* 6. CABIN & GLASSHOUSE (PIXEL-PERFECT ACCURACY TO REFERENCE) */}
+      <g id="cabin">
+        {/* Outer Mid-Grey (#555) Canopy Base with Teal Outline Kept (#1fa2ad) */}
+        <path
+          d="
+            M 480 163.5
+            C 480 186, 465 210, 442 222
+            C 410 236, 360 240, 290 236
+            C 220 232, 160 218, 138 198
+            L 138 129
+            C 160 109, 220 95, 290 91
+            C 360 87, 410 91, 442 105
+            C 465 117, 480 141, 480 163.5
+            Z
+          "
+          fill="#555555"
+          stroke="#1fa2ad"
+          strokeWidth="1.1"
+        />
+
+        {/* 1. REAR DECK COVER & BUTTRESSES (x ≈ 135-260) */}
+        <g id="rear-deck-group">
+          {/* Flying Buttress Pillars / Surrounds */}
+          <path
+            d="
+              M 137 132
+              L 260 102
+              L 260 84
+              C 215 88, 170 104, 137 132
+              Z
+            "
+            fill="#3a3d42"
+          />
+          <path
+            d="
+              M 137 195
+              L 260 225
+              L 260 243
+              C 215 239, 170 223, 137 195
+              Z
+            "
+            fill="#3a3d42"
+          />
+
+          {/* Recessed Triangular Black Glass Intake Windows on Buttresses */}
+          <path
+            d="
+              M 152 124
+              L 255 96
+              L 255 102
+              L 155 129
+              Z
+            "
+            fill="#111214"
+          />
+          <path
+            d="
+              M 152 203
+              L 255 231
+              L 255 225
+              L 155 198
+              Z
+            "
+            fill="#111214"
+          />
+
+          {/* Main Dark Rear Deck Cover (#1c1c1c) */}
+          <path
+            d="
+              M 137 132
+              C 175 114, 218 106, 260 102
+              L 260 225
+              C 218 221, 175 213, 137 195
+              C 135 178, 135 149, 137 132
+              Z
+            "
+            fill="#1c1c1c"
+            stroke="#3a3d42"
+            strokeWidth="2.5"
+            strokeLinejoin="round"
+          />
+
+          {/* Thin vertical light-grey line at x ≈ 243 */}
+          <line x1="243" y1="105" x2="243" y2="222" stroke="#c0c4cc" strokeWidth="0.8" />
+        </g>
+
+        {/* 2. ROOF PANEL (x ≈ 260-376) */}
+        <g id="roof-panel">
+          {/* Base Roof Shading (#4d4f54) */}
+          <path
+            d="
+              M 260 102
+              C 298 97, 335 98, 376 104
+              L 376 223
+              C 335 229, 298 230, 260 225
+              Z
+            "
+            fill="#4d4f54"
+            stroke="#666666"
+            strokeWidth="0.8"
+          />
+
+          {/* Dark Bevel Borders along top and bottom roof rails */}
+          <path
+            d="
+              M 260 102
+              C 298 97, 335 98, 376 104
+              L 376 114
+              C 335 108, 298 107, 260 112
+              Z
+            "
+            fill="#34363a"
+          />
+          <path
+            d="
+              M 260 225
+              C 298 230, 335 229, 376 223
+              L 376 213
+              C 335 219, 298 220, 260 215
+              Z
+            "
+            fill="#34363a"
+          />
+
+          {/* TWO DARK RIGHT-TRIANGLE WEDGES (#262626) with points toward the rear (left) */}
+          <path
+            d="
+              M 315 149
+              L 374 114
+              L 374 149
+              Z
+            "
+            fill="#262626"
+          />
+          <path
+            d="
+              M 315 178
+              L 374 178
+              L 374 213
+              Z
+            "
+            fill="#262626"
+          />
+
+          {/* Central Spine Surface (#4d4f54) */}
+          <rect x="260" y="149" width="114" height="29" fill="#4d4f54" />
+
+          {/* TWO CRISP LIGHT LINES FORMING THE T-BAR / HAMMERHEAD WITH SMOOTH 90° CORNER FILLET */}
+          <path
+            d="
+              M 270 149
+              L 344 149
+              C 358 149, 368 141, 369 127
+              L 370 105
+            "
+            fill="none"
+            stroke="#e2e4e8"
+            strokeWidth="1.1"
+            strokeLinecap="round"
+          />
+          <path
+            d="
+              M 270 178
+              L 344 178
+              C 358 178, 368 186, 369 200
+              L 370 222
+            "
+            fill="none"
+            stroke="#e2e4e8"
+            strokeWidth="1.1"
+            strokeLinecap="round"
+          />
+
+          {/* Faint Windshield Header Seam Line */}
+          <line x1="376" y1="104" x2="376" y2="223" stroke="#888888" strokeWidth="0.8" strokeDasharray="3 2" opacity="0.6" />
+        </g>
+
+        {/* 3. WINDSHIELD (x ≈ 376-480) - CLEAN CONTINUOUS GLASS + REFLECTIONS + WIPER */}
+        <g id="windshield">
+          {/* Continuous Dark Windshield Glass Base */}
+          <path
+            d="
+              M 376 104
+              C 410 110, 442 121, 466 142
+              C 477 151, 480 158, 480 163.5
+              C 480 169, 477 176, 466 185
+              C 442 206, 410 217, 376 223
+              C 379 204, 381 184, 381 163.5
+              C 381 143, 379 123, 376 104
+              Z
+            "
+            fill="#222326"
+          />
+
+          {/* Thick black (#0a0a0a) A-pillar frame */}
+          <path
+            d="
+              M 376 104
+              C 412 110, 444 122, 468 143
+              L 475 149
+              C 448 126, 415 113, 378 107
+              Z
+            "
+            fill="#0a0a0a"
+          />
+          <path
+            d="
+              M 376 223
+              C 412 217, 444 205, 468 184
+              L 475 178
+              C 448 201, 415 214, 378 220
+              Z
+            "
+            fill="#0a0a0a"
+          />
+
+          {/* 3 WIDE SMOOTH HORIZONTAL CURVED REFLECTION BANDS BOWED TOWARD NOSE */}
+          {/* Band 1 - Upper (#383b40) */}
+          <path
+            d="
+              M 382 110
+              C 415 116, 448 128, 472 146
+              L 475 153
+              C 445 138, 414 126, 382 122
+              Z
+            "
+            fill="#3a3d42"
+            opacity="0.85"
+          />
+          {/* Band 2 - Middle (#50545a) */}
+          <path
+            d="
+              M 382 135
+              C 418 143, 452 155, 477 167
+              L 474 175
+              C 448 165, 416 153, 382 147
+              Z
+            "
+            fill="#52565d"
+            opacity="0.9"
+          />
+          {/* Band 3 - Lower Brightest (#6a6f78) */}
+          <path
+            d="
+              M 382 165
+              C 420 173, 450 186, 471 200
+              L 466 207
+              C 444 196, 416 183, 382 177
+              Z
+            "
+            fill="#6e737c"
+            opacity="0.95"
+          />
+
+          {/* Small black rear-view mirror block (pill shape) */}
+          <rect x="382" y="148" width="18" height="31" rx="6" fill="#0c0d0f" />
+
+          {/* ARTICULATED WINDSHIELD WIPER */}
+          <g id="windshield-wiper">
+            {/* Dual Wiper Blades along front cowl curve */}
+            <path
+              d="
+                M 454 122
+                L 468 150
+                L 469 157
+                L 463 157
+                L 462 152
+                L 450 126
+                Z
+              "
+              fill="#121315"
+              stroke="#d8dce2"
+              strokeWidth="0.9"
+              strokeLinejoin="round"
+            />
+            {/* Lower wiper arm segment & elbow */}
+            <path
+              d="
+                M 469 157
+                L 474 174
+                L 472 181
+                L 466 177
+                L 465 166
+              "
+              fill="none"
+              stroke="#d8dce2"
+              strokeWidth="1"
+              strokeLinejoin="round"
+            />
+            {/* Wiper Pivot Base */}
+            <circle cx="472" cy="183" r="1.8" fill="#e8ecf2" />
+          </g>
+        </g>
+      </g>
+
+      {/* 7. SIDE MIRRORS (SHARK-FIN HOUSING MATCHING REFERENCE CROP) */}
+      <g id="mirrors">
+        <use href="#mirror-top" xlinkHref="#mirror-top" />
+        <use href="#mirror-top" xlinkHref="#mirror-top" transform="translate(0 327) scale(1 -1)" />
+      </g>
+    </svg>
+  );
+};
